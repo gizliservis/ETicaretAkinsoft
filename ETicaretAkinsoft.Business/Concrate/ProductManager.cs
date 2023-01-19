@@ -1,4 +1,5 @@
 ﻿using ETicaretAkinsoft.Business.Abstract;
+using ETicaretAkinsoft.Business.Constants;
 using ETicaretAkinsoft.Core.Utilities.Results;
 using ETicaretAkinsoft.DataAccess.Abstract;
 using ETicaretAkinsoft.Entities.Concrate;
@@ -24,31 +25,35 @@ namespace ETicaretAkinsoft.Business.Concrate
 
             if (product.ProductName.Length<2)
             {
-                return new ErrorResult("Ürün İsmi En Az 2 Karakter Olmalıdır");
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
            _productDal.Add(product);
-            return new Result(true, "Eklendi");
+            return new Result(true, Messages.ProductAded);
 
         }
 
-        public List<Product> GetAll()
+        public IDataResult<List<Product>> GetAll()
         {
-           return _productDal.GetAll();
+            if (DateTime.Now.Hour==22)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            }
+           return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductListed);
         }
 
-        public List<Product> GetAllByCategoryId(int id)
+        public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
-            return _productDal.GetAll(p=>p.CategoryId==id);
+            return new SuccessDataResult<List<Product>>( _productDal.GetAll(p=>p.CategoryId==id));
         }
 
-        public List<Product> GetAllByUnitPrice(decimal min, decimal max)
+        public IDataResult<List<Product>> GetAllByUnitPrice(decimal min, decimal max)
         {
-            return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice<=max);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice<=max));
         }
 
-        public List<Product> GetById(int productId)
+        public IDataResult<Product> GetById(int productId)
         {
-            return _productDal.GetAll(p=>p.ProductId==productId);
+            return new SuccessDataResult<Product>( _productDal.Get(p=>p.ProductId==productId));
         }
     }
 }
