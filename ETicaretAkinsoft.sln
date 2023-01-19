@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.ConsoleUI"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Core", "ETicaretAkinsoft.Core\ETicaretAkinsoft.Core.csproj", "{751427EF-D5B2-401B-8170-88FD1FBED939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.WebAPI", "ETicaretAkinsoft.WebAPI\ETicaretAkinsoft.WebAPI.csproj", "{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{751427EF-D5B2-401B-8170-88FD1FBED939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{751427EF-D5B2-401B-8170-88FD1FBED939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{751427EF-D5B2-401B-8170-88FD1FBED939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
