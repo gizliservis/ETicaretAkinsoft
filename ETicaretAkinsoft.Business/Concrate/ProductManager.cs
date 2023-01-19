@@ -1,5 +1,7 @@
 ﻿using ETicaretAkinsoft.Business.Abstract;
 using ETicaretAkinsoft.Business.Constants;
+using ETicaretAkinsoft.Business.ValidationRules.FluentValidation;
+using ETicaretAkinsoft.Core.CrossCuttingConcerns.Validation;
 using ETicaretAkinsoft.Core.Utilities.Results;
 using ETicaretAkinsoft.DataAccess.Abstract;
 using ETicaretAkinsoft.Entities.Concrate;
@@ -22,12 +24,8 @@ namespace ETicaretAkinsoft.Business.Concrate
 
         public IResult Add(Product product)
         {
-
-            if (product.ProductName.Length<2)
-            {
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
-           _productDal.Add(product);
+            ValidationTool.Validate(new ProductValidator(), product);
+            _productDal.Add(product);
             return new Result(true, Messages.ProductAded);
 
         }
