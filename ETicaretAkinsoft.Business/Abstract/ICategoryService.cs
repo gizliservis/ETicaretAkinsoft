@@ -1,17 +1,14 @@
-﻿using ETicaretAkinsoft.Entities.Concrate;
+﻿using ETicaretAkinsoft.Core.Utilities.Results;
+using ETicaretAkinsoft.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ETicaretAkinsoft.Business.Abstract
 {
     public interface ICategoryService
     {
-        List<Category> GetAll();
-        List<Category> GetById(int categoryId);
-
-
+        IDataResult<List<Category>> GetAll();
+        IDataResult<Category> GetById(int categoryId);
     }
 }

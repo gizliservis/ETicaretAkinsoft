@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.DataAccess", "ETicaretAkinsoft.DataAccess\ETicaretAkinsoft.DataAccess.csproj", "{8A294CD5-D773-4028-A159-26D6A299BA50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Entities", "ETicaretAkinsoft.Entities\ETicaretAkinsoft.Entities.csproj", "{9C319610-0F9E-4398-AE65-24799E82DB92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Business", "ETicaretAkinsoft.Business\ETicaretAkinsoft.Business.csproj", "{59312DD1-19B4-41BE-AD39-51FC0D2735E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.DataAccess", "ETicaretAkinsoft.DataAccess\ETicaretAkinsoft.DataAccess.csproj", "{3374BF75-E926-4946-A531-7FA7D01C71A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Entities", "ETicaretAkinsoft.Entities\ETicaretAkinsoft.Entities.csproj", "{80EE695D-D6E8-4124-AEFC-5B00C3B91414}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Business", "ETicaretAkinsoft.Business\ETicaretAkinsoft.Business.csproj", "{1073872D-0225-47A1-B2D6-107E42CA7BFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.ConsoleUI", "ETicaretAkinsoft.ConsoleUI\ETicaretAkinsoft.ConsoleUI.csproj", "{886E0914-ED4D-4415-B439-105AF7C4ECDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Core", "ETicaretAkinsoft.Core\ETicaretAkinsoft.Core.csproj", "{6B58E1C8-E9C6-4A4A-B18C-2A73E86A55C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.Core", "ETicaretAkinsoft.Core\ETicaretAkinsoft.Core.csproj", "{751427EF-D5B2-401B-8170-88FD1FBED939}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.WebAPI", "ETicaretAkinsoft.WebAPI\ETicaretAkinsoft.WebAPI.csproj", "{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAkinsoft.WebAPI", "ETicaretAkinsoft.WebAPI\ETicaretAkinsoft.WebAPI.csproj", "{50D634EC-2351-4AB5-A433-8D35D1621A7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,30 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A294CD5-D773-4028-A159-26D6A299BA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A294CD5-D773-4028-A159-26D6A299BA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A294CD5-D773-4028-A159-26D6A299BA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A294CD5-D773-4028-A159-26D6A299BA50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59312DD1-19B4-41BE-AD39-51FC0D2735E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59312DD1-19B4-41BE-AD39-51FC0D2735E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59312DD1-19B4-41BE-AD39-51FC0D2735E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59312DD1-19B4-41BE-AD39-51FC0D2735E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80EE695D-D6E8-4124-AEFC-5B00C3B91414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80EE695D-D6E8-4124-AEFC-5B00C3B91414}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80EE695D-D6E8-4124-AEFC-5B00C3B91414}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80EE695D-D6E8-4124-AEFC-5B00C3B91414}.Release|Any CPU.Build.0 = Release|Any CPU
-		{886E0914-ED4D-4415-B439-105AF7C4ECDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{886E0914-ED4D-4415-B439-105AF7C4ECDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{886E0914-ED4D-4415-B439-105AF7C4ECDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{886E0914-ED4D-4415-B439-105AF7C4ECDB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{751427EF-D5B2-401B-8170-88FD1FBED939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{751427EF-D5B2-401B-8170-88FD1FBED939}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{751427EF-D5B2-401B-8170-88FD1FBED939}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{751427EF-D5B2-401B-8170-88FD1FBED939}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF81F0AA-0A06-48C2-AD5A-F1FA36BBCD94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C319610-0F9E-4398-AE65-24799E82DB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C319610-0F9E-4398-AE65-24799E82DB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C319610-0F9E-4398-AE65-24799E82DB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C319610-0F9E-4398-AE65-24799E82DB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3374BF75-E926-4946-A531-7FA7D01C71A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3374BF75-E926-4946-A531-7FA7D01C71A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3374BF75-E926-4946-A531-7FA7D01C71A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3374BF75-E926-4946-A531-7FA7D01C71A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1073872D-0225-47A1-B2D6-107E42CA7BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1073872D-0225-47A1-B2D6-107E42CA7BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1073872D-0225-47A1-B2D6-107E42CA7BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1073872D-0225-47A1-B2D6-107E42CA7BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B58E1C8-E9C6-4A4A-B18C-2A73E86A55C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B58E1C8-E9C6-4A4A-B18C-2A73E86A55C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B58E1C8-E9C6-4A4A-B18C-2A73E86A55C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B58E1C8-E9C6-4A4A-B18C-2A73E86A55C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D634EC-2351-4AB5-A433-8D35D1621A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D634EC-2351-4AB5-A433-8D35D1621A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D634EC-2351-4AB5-A433-8D35D1621A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D634EC-2351-4AB5-A433-8D35D1621A7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

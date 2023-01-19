@@ -1,10 +1,14 @@
 ﻿using ETicaretAkinsoft.Business.Abstract;
-using ETicaretAkinsoft.Business.Concrate;
-using ETicaretAkinsoft.DataAccess.Concrate.EntityFramework;
-using ETicaretAkinsoft.Entities.Concrate;
+using ETicaretAkinsoft.Business.Concrete;
+using ETicaretAkinsoft.DataAccess.Concrete.EntityFramework;
+using ETicaretAkinsoft.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ETicaretAkinsoft.WebAPI.Controllers
 {
@@ -12,6 +16,9 @@ namespace ETicaretAkinsoft.WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        //Loosely coupled
+        //naming convention
+        //IoC Container -- Inversion of Control
         IProductService _productService;
 
         public ProductsController(IProductService productService)
@@ -22,33 +29,69 @@ namespace ETicaretAkinsoft.WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-           
-           var result= _productService.GetAll();
+            //Swagger
+            //Dependency chain --
+
+            Thread.Sleep(1000);
+
+            var result =  _productService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
             }
-           return BadRequest(result);
+            return BadRequest(result);
+
         }
+
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result=_productService.GetById(id);
+            var result = _productService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
             }
+
             return BadRequest(result);
         }
+
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategory(int categoryId)
+        {
+            var result = _productService.GetAllByCategoryId(categoryId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getproductdetails")]
+        public IActionResult GetProductDetails(int categoryId)
+        {
+            var result = _productService.GetProductDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Product product)
         {
-            var result=_productService.Add(product);
+            var result = _productService.Add(product);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
+
     }
 }
+
+

@@ -1,11 +1,10 @@
 ﻿using ETicaretAkinsoft.Core.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ETicaretAkinsoft.Entities.Concrate
+namespace ETicaretAkinsoft.Entities.Concrete
 {
     public class Product:IEntity
     {
@@ -14,7 +13,6 @@ namespace ETicaretAkinsoft.Entities.Concrate
         public string ProductName { get; set; }
         public short UnitsInStock { get; set; }
         public decimal UnitPrice { get; set; }
-
 
     }
 }
