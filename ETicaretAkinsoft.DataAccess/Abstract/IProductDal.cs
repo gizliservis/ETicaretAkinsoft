@@ -13,4 +13,4 @@ namespace ETicaretAkinsoft.DataAccess.Abstract
     }
 }
 
-//Code Refactoring
+

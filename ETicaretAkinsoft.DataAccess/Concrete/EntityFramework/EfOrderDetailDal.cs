@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ETicaretAkinsoft.DataAccess.Concrete.EntityFramework
 {
-    internal class EfOrderDetailDal: EfEntityRepositoryBase<OrderDetail, NorthwindContext>, IOrderDetailDal
+    public class EfOrderDetailDal: EfEntityRepositoryBase<OrderDetail, AkinsoftContext>, IOrderDetailDal
     {
     }
 }

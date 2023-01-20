@@ -16,9 +16,6 @@ namespace ETicaretAkinsoft.WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        //Loosely coupled
-        //naming convention
-        //IoC Container -- Inversion of Control
         IProductService _productService;
 
         public ProductsController(IProductService productService)
@@ -29,10 +26,6 @@ namespace ETicaretAkinsoft.WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            //Swagger
-            //Dependency chain --
-
-            Thread.Sleep(1000);
 
             var result =  _productService.GetAll();
             if (result.Success)

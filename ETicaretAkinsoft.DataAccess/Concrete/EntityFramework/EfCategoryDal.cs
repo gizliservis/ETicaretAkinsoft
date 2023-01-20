@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ETicaretAkinsoft.DataAccess.Concrete.EntityFramework
 {
-    public class EfCategoryDal : EfEntityRepositoryBase<Category, NorthwindContext>, ICategoryDal
+    public class EfCategoryDal : EfEntityRepositoryBase<Category, AkinsoftContext>, ICategoryDal
     {
         
     }

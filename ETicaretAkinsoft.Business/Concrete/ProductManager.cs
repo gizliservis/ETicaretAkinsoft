@@ -10,7 +10,6 @@ using ETicaretAkinsoft.Core.CrossCuttingConcerns.Validation;
 using ETicaretAkinsoft.Core.Utilities.Business;
 using ETicaretAkinsoft.Core.Utilities.Results;
 using ETicaretAkinsoft.DataAccess.Abstract;
-using ETicaretAkinsoft.DataAccess.Concrete.InMemory;
 using ETicaretAkinsoft.Entities.Concrete;
 using ETicaretAkinsoft.Entities.DTOs;
 using FluentValidation;
@@ -32,16 +31,12 @@ namespace ETicaretAkinsoft.Business.Concrete
             _categoryService = categoryService;
         }
 
-        //00.25 Dersteyiz
-        //Claim
-        //[SecuredOperation("product.add,admin")]
+
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
 
-            //Aynı isimde ürün eklenemez
-            //Eğer mevcut kategori sayısı 15'i geçtiyse sisteme yeni ürün eklenemez. ve 
             IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName), 
                 CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceded());
 
@@ -74,7 +69,6 @@ namespace ETicaretAkinsoft.Business.Concrete
         }
 
         [CacheAspect]
-        //[PerformanceAspect(5)]
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
@@ -108,7 +102,6 @@ namespace ETicaretAkinsoft.Business.Concrete
 
         private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)
         {
-            //Select count(*) from products where categoryId=1
             var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
             if (result >= 15)
             {
@@ -138,7 +131,6 @@ namespace ETicaretAkinsoft.Business.Concrete
             return new SuccessResult();
         }
 
-        //[TransactionScopeAspect]
         public IResult AddTransactionalTest(Product product)
         {
 

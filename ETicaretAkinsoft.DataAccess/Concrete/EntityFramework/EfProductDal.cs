@@ -12,11 +12,11 @@ using System.Text;
 namespace ETicaretAkinsoft.DataAccess.Concrete.EntityFramework
 {
     //NuGet
-    public class EfProductDal : EfEntityRepositoryBase<Product, NorthwindContext>, IProductDal
+    public class EfProductDal : EfEntityRepositoryBase<Product, AkinsoftContext>, IProductDal
     {
         public List<ProductDetailDto> GetProductDetails()
         {
-            using (NorthwindContext context = new NorthwindContext())
+            using (AkinsoftContext context = new AkinsoftContext())
             {
                 var result = from p in context.Products
                              join c in context.Categories

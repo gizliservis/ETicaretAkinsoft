@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ETicaretAkinsoft.Entities.Concrete
 {
-    //Çıplak Class Kalmasın
+
     public class Category:IEntity
     {
         public int CategoryId { get; set; }

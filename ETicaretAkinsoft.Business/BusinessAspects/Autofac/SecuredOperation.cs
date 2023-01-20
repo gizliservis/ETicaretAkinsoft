@@ -11,7 +11,6 @@ using ETicaretAkinsoft.Business.Constants;
 
 namespace ETicaretAkinsoft.Business.BusinessAspects.Autofac
 {
-    //JWT
     public class SecuredOperation : MethodInterception
     {
         private string[] _roles;

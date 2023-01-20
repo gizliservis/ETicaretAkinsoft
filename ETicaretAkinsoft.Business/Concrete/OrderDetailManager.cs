@@ -1,5 +1,4 @@
 ﻿using ETicaretAkinsoft.Business.Abstract;
-using ETicaretAkinsoft.Business.Constants;
 using ETicaretAkinsoft.Business.ValidationRules.FluentValidation;
 using ETicaretAkinsoft.Core.Aspects.Autofac.Caching;
 using ETicaretAkinsoft.Core.Aspects.Autofac.Validation;
@@ -17,17 +16,16 @@ using System.Threading.Tasks;
 
 namespace ETicaretAkinsoft.Business.Concrete
 {
-    public class OrderManager : IOrderService
+    public class OrderDetailManager : IOrderDetailService
     {
-        IOrderDal _orderDal;
-        public OrderManager(IOrderDal orderDal)
+        IOrderDetailDal _orderDetailDal;
+        public OrderDetailManager(IOrderDetailDal orderDetailDal)
         {
-            _orderDal = orderDal;
+            _orderDetailDal = orderDetailDal;
         }
-
-        [ValidationAspect(typeof(OrderValidator))]
-        [CacheRemoveAspect("IOrderService.Get")]
-        public IResult Add(Order order)
+        [ValidationAspect(typeof(OrderDetailValidator))]
+        [CacheRemoveAspect("IOrderDetailService.Get")]
+        public IResult Add(OrderDetail orderDetail)
         {
             IResult result = BusinessRules.Run();
             if (result != null)
@@ -35,20 +33,19 @@ namespace ETicaretAkinsoft.Business.Concrete
                 return result;
             }
 
-            _orderDal.Add(order);
+            _orderDetailDal.Add(orderDetail);
 
             return new SuccessResult();
         }
-        [ValidationAspect(typeof(OrderValidator))]
-        [CacheRemoveAspect("IOrderService.Get")]
-        public IResult Update(Order order)
+
+        public IResult Update(OrderDetail orderDetail)
         {
-            var result = _orderDal.GetAll(p => p.OrderId == order.OrderId).Count;
+            var result = _orderDetailDal.GetAll(p => p.OrderDetailId == orderDetail.OrderDetailId).Count;
             if (result == 0)
             {
                 return new ErrorResult("Güncelleme İşlemi Yapılamadı");
             }
-            _orderDal.Update(order);
+            _orderDetailDal.Update(orderDetail);
             throw new NotImplementedException();
         }
     }
